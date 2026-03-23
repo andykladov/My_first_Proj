@@ -125,17 +125,17 @@ def game (word):
         r2 = 'Выигр пользователь, т.к. ножн режут бумагу'
     elif word == 'Бумага' and pc == 'Камень':
         r2 = 'Выигр пользователь, т.к. бумага  заворачивает камень'
-    elif word=='Камень' and pc=='Ножн':
+    elif word=='Ножн' and pc=='Камень':
         r2='Выигр комп, т.к. камень ломает ножн'
-    elif word == 'Ножн' and pc == 'Бумага':
+    elif word == 'Бумага' and pc == 'Ножн':
         r2 = 'Выигр комп, т.к. ножн режут бумагу'
-    elif word == 'Бумага' and pc == 'Камень':
+    elif word == 'Камень' and pc == 'Бумага':
         r2 = 'Выигр комп, т.к. бумага  заворачивает камень'
     else: r2='Ничья'
     return r1 +'\n' +r2 + '\n'
-print(ger_world(1))
-print(ger_world(2))
-print(ger_world(3))
+#print(ger_world(1))
+#print(ger_world(2))
+#print(ger_world(3))
 
 print(game('Камень'))
 print(game('Ножн'))
