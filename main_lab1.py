@@ -85,6 +85,7 @@ def beta(a,b):
     return avg
 print(beta(10,20))
 """
+"""
 a=(1,5,3,7,2,7.8,9)
 print(a)
 print(type(a))
@@ -93,4 +94,54 @@ print(a[-1])
 print(a[:3])
 print(a[1:3])
 print(a[3:])
+"""
+"""
+def delta(a,b):
+    s=a+b
+    v=s/2
+    return s,v
+b1,b2=delta(10,20)
+b=delta(10,20)
+print('sum = ',b1, 'aver = ', b2)
+print('sum = ',b[0], 'aver = ', b[1])
+"""
+import random
+n=random.randint(1,7)
+print(n)
+
+import random
+def ger_world(n):
+    if n==1: s= 'Камень'
+    elif n == 2: s = 'Ножн'
+    else: s ='Бумага'
+    return s
+def game (word):
+    n = random.randint(1, 3)
+    pc=ger_world(n)
+    r1='Пользователь : ' + word + ',Компьютер: ' + pc
+    if word=='Камень' and pc=='Ножн':
+        r2='Выигр пользователь, т.к. камень ломает ножн'
+    elif word == 'Ножн' and pc == 'Бумага':
+        r2 = 'Выигр пользователь, т.к. ножн режут бумагу'
+    elif word == 'Бумага' and pc == 'Камень':
+        r2 = 'Выигр пользователь, т.к. бумага  заворачивает камень'
+    elif word=='Камень' and pc=='Ножн':
+        r2='Выигр комп, т.к. камень ломает ножн'
+    elif word == 'Ножн' and pc == 'Бумага':
+        r2 = 'Выигр комп, т.к. ножн режут бумагу'
+    elif word == 'Бумага' and pc == 'Камень':
+        r2 = 'Выигр комп, т.к. бумага  заворачивает камень'
+    else: r2='Ничья'
+    return r1 +'\n' +r2 + '\n'
+print(ger_world(1))
+print(ger_world(2))
+print(ger_world(3))
+
+print(game('Камень'))
+print(game('Ножн'))
+print(game('Бумага'))
+
+
+
+
 
