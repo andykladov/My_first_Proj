@@ -138,7 +138,7 @@ def game (word):
 #print(ger_world(3))
 
 print(game('Камень'))
-print(game('Ножн'))
+print(game('Камень'))
 print(game('Бумага'))
 
 
