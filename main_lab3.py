@@ -32,6 +32,7 @@ plt.xlim(9, 10.2)
 plt.ylim(-1, 1.5)
 plt.show()
 """
+"""
 import numpy as np
 import math
 import matplotlib.pyplot as plt
@@ -74,8 +75,37 @@ b3 = f(a3)
 print(a1, b1)
 print(a2, b2)
 print(a3, b3)
-
-
+a=np.array([[1,a1,a1**2],[1,a2,a2**2],[1,a3,a3**2]])
+b=np.array([b1,b2,b3])
+w0,w1,w2=np.linalg.solve(a,b)
+y2=w0+w1*x+w2*x**2
+plt.plot(x,y,color='r')
+plt.plot(x,y2,color='b')
+plt.scatter([a1,a2,a3],[b1,b2,b3],color='g')
+plt.show()
+a1 = 0
+a2 = 4
+a3 = 16
+a4=16
+b1 = f(a1)
+b2 = f(a2)
+b3 = f(a3)
+b4=f(a4)
+print(a1, b1)
+print(a2, b2)
+print(a3, b3)
+print(a4,b4)
+a=np.array([[1,a1,a1**2,a1**3],[1,a2,a2**2,a2**3],[1,a3,a3**2,a3**3],[1,a4,a4**2,a4**3]])
+b=np.array([b1,b2,b3,b4])
+w0,w1,w2,w3=np.linalg.solve(a,b)
+y2=w0+w1*x+w2*x**2+w3*x**3
+plt.plot(x,y,color='r')
+plt.plot(x,y2,color='b')
+plt.scatter([a1,a2,a3,a4],[b1,b2,b3,b4],color='b')
+plt.show()
+mse3=get_error(y,y2)
+print('Error = ', mse3)
+"""
 
 
 
