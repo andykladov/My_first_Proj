@@ -57,6 +57,7 @@ print('TDOP=', TDOP)
 print('PDOP=', PDOP)
 print('GDOP=', GDOP)
 """
+""" # Работа с таблтцами
 from operator import index
 from unittest.mock import inplace
 
@@ -81,6 +82,25 @@ df1.loc[len(df1)]=['Валев', 41, 'Повар','Танцы']
 print(df1)
 df1.drop(index=2, inplace=True)
 print(df1)
+df1=df1.drop('Хобби',axis=1)#удаляем столбец и 2-ю стороку
+print(df1)
+
+df=pd.read_csv('employee.csv')
+print(df)
+print(df.dtypes)
+print(df.info())
+df2=df.dropna()
+print(df2)
+df.fillna('Разнорабочий',inplace=True)
+print(df)
+print(df.iloc[2,0])
+df.iloc[2,0]='Антонов'
+print(df)
+
+df1.to_csv('output_data.csv',encoding='cp1251')
+
+""""
+
 
 
 
