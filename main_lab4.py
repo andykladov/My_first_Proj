@@ -57,3 +57,30 @@ print('TDOP=', TDOP)
 print('PDOP=', PDOP)
 print('GDOP=', GDOP)
 """
+from operator import index
+from unittest.mock import inplace
+
+import pandas as pd
+SureName=['Гальцев','Дорохин','Васильев']
+Age=[26,28,30]
+Position=['Моряк','Матрос','Юнга']
+df1=pd.DataFrame([SureName,Age,Position])
+df1=df1.T
+df1.columns=['Фамилия','Возраст','Должность']
+print(df1)
+print(df1.shape)
+print(df1.columns)
+print(df1.iloc[1])
+print(df1[['Фамилия','Должность']]) #отобразить список всех фамилий
+print(df1.iloc[:,0])#по индексу
+print(df1.iloc[:,-1])
+#print(df1.iloc[:,0:,-1]) #все кроме последнего - УТОЧНИТЬ ЧТО не так!!!
+df1['Хобби']=['Макраме','Вязание','Рыбалка']#добавляем столбец
+print(df1)
+df1.loc[len(df1)]=['Валев', 41, 'Повар','Танцы']
+print(df1)
+df1.drop(index=2, inplace=True)
+print(df1)
+
+
+
